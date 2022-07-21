@@ -1,0 +1,256 @@
+html, input, select{
+  background-color: #0d142c;
+  color: #fff;
+}
+
+.main-container{
+  background-color: #0d142c;
+  color: #fff;
+  text-align: center;
+}
+
+.navigation-menu{
+  display: flex;
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.navigation-menu ul{
+  padding-left: 0px;
+}
+
+.navigation-menu ul li{
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.navigation-menu li a{
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.active{
+  color: #F5E43E;
+}
+
+.main-heading{
+  font-size: 45px;
+  margin: 0;
+  padding: 50px 0px 50px 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 600;
+}
+
+.style-color-heading{
+  color: #F5E43E;
+}
+
+.coins-list-container, .general-container{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+/*.coins-items-container{
+  height: 350px;
+  overflow: hidden;
+} */
+
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.btn-more{
+  width: 50px;
+  height: 50px;
+  border: 3px solid #fff;
+  border-radius: 50px;
+  background: #F5E43E;
+  font-size: 25px;
+}
+
+.hover-element:hover{
+  background: #fff;
+  border: 3px solid #F5E43E;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.btn-collapsible{
+  padding: 10px 50px;
+  background: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.coin-item{
+  display: flex;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0px 10px 0px;
+}
+
+.img-coin img{
+  max-width: 25px;
+  padding-right: 20px;
+}
+
+.short-name-coin{
+  min-width: 10%;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.name-coin{
+  width: 40%;
+  text-align: left;
+}
+
+.price-coin{
+  width: 40%;
+  text-align: left;
+}
+
+.search-form{
+  display: flex;
+  align-items: stretch;
+  padding: 20px 0px 20px 0px;
+}
+
+.search-input{
+  width: 100%;
+  color: #fff;
+  border: 0px;
+  border-bottom: 1px solid #fff;
+  margin-right: 10px;
+}
+
+.search-input::placeholder{
+  color: #F5E43E;
+  text-transform: uppercase;
+}
+
+.search-button{
+   background-color: #F5E43E;
+   padding: 10px 30px 10px 30px;
+   font-weight: 700;
+   text-transform: uppercase;
+   border: 3px solid #fff;
+   color: #0d142c;
+}
+
+/* Calculator */
+
+.flex-style-row{
+  display: flex;
+}
+
+@media (max-width: 879px){
+  .flex-style-row{
+    flex-direction: column;
+  }
+}
+
+.calculator-container{
+  position: relative;
+  width: 80%;
+  display: flex;
+  align-items: stretch;
+  margin: auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-box-style{
+  width: 80%;
+  display: flex;
+}
+
+.field-calculator-input{
+  width: 100%;
+  color: #F5E43E;
+  border: 1px solid #fff;
+  padding: 20px 0px 20px 10px;
+}
+
+.field-wrap{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.field-wrap:nth-child(2){
+  margin-left: 30px;
+}
+
+.field-wrap select::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .field-wrap select::-webkit-scrollbar-thumb {
+    background: #F5E43E; 
+    border-radius: 10px;
+  }
+
+.label-text{
+  text-align: left;
+  padding: 0px 0px 10px 0px;
+}
+
+.vertical-center{
+  position: relative;
+  width: 100px;
+}
+
+.vertical-center span{
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 41%;
+  font-size: 30px;
+/*  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+}
+
+.submit-btn{
+  background-color: #F5E43E;
+  color: #0d142c;
+  border: 1px solid #F5E43E;
+  padding: 0px 30px 0px 30px;
+  margin: 30px 0px 0px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.submit-btn:hover{
+  background-color: #fff;
+  color: #0d142c;
+  border: 1px solid #F5E43E;
+  cursor: pointer;
+}
+
+.result-div{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 0px 0px;
+  font-size: 30px;
+}
+
+.result-amount-style{
+  font-size: 45px;
+  padding: 10px 0px 0px 0px;
+  color: #F5E43E;
+  text-align: left;
+}
