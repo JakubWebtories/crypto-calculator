@@ -1,5 +1,4 @@
-{
-  "homepage": "http://JakubWebtories.github.io/crypto-calculator",
+{ 
   "name": "crypto-api",
   "version": "0.1.0",
   "private": true,

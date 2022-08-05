@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import Item from '../components/item'
 
 const baseURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-// const baseURL = ""
 
-const Posts = ({post, setPost}) => {
+const Posts = () => {
     
+    const [post, setPost] = useState([])
     const [search, setSearch] = useState('')
 
     useEffect(() => {
@@ -20,8 +20,6 @@ const Posts = ({post, setPost}) => {
     
     const submitSearchHandler = (e) => {
         e.preventDefault()
-       /* console.log('click')
-        setSearch()*/        
     }
     
     const searchInput = (e) => {
@@ -44,10 +42,9 @@ const Posts = ({post, setPost}) => {
             <section className="coins-list-container">
                 <form className="search-form" onSubmit={submitSearchHandler}>
                     <input className="search-input" type="text" placeholder="Search crypto . . ." onChange={searchInput} ></input>
-                    <button className="search-button hover-element">Search</button>
                 </form>
                 <div className="coins-items-container">
-                {filteredCoins.slice().map(coin => {
+                {filteredCoins.map(coin => {
                             return(
                                 <Item
                                     key={coin.id}
@@ -55,14 +52,12 @@ const Posts = ({post, setPost}) => {
                                     symbol={coin.symbol}
                                     name={coin.name}
                                     price={coin.current_price}
+                                    market_cap_change_percentage_24h={coin.market_cap_change_percentage_24h}
                                 />
                                 )
                             }
                         )
                     }
-                </div>
-                <div className="btn-container">
-                    <button className="btn-more hover-element" /*onClick={loadMore}*/>+</button>
                 </div>
             </section>
         </section>

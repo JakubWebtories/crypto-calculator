@@ -33,7 +33,7 @@ html, input, select{
   font-size: 18px;
 }
 
-.active{
+.active, .style-color-heading, .currency-symbol{
   color: #F5E43E;
 }
 
@@ -46,10 +46,6 @@ html, input, select{
   font-weight: 600;
 }
 
-.style-color-heading{
-  color: #F5E43E;
-}
-
 .coins-list-container, .general-container{
   width: 80%;
   display: flex;
@@ -57,11 +53,6 @@ html, input, select{
   margin: auto;
   padding-bottom: 50px;
 }
-
-/*.coins-items-container{
-  height: 350px;
-  overflow: hidden;
-} */
 
 .btn-container{
   display: flex;
@@ -120,6 +111,10 @@ html, input, select{
   text-align: left;
 }
 
+.percentage-change-coin{
+  font-weight: 700;
+}
+
 .search-form{
   display: flex;
   align-items: stretch;
@@ -131,7 +126,7 @@ html, input, select{
   color: #fff;
   border: 0px;
   border-bottom: 1px solid #fff;
-  margin-right: 10px;
+  padding-bottom: 15px;
 }
 
 .search-input::placeholder{
@@ -177,7 +172,6 @@ html, input, select{
 }
 
 .field-calculator-input{
-  width: 100%;
   color: #F5E43E;
   border: 1px solid #fff;
   padding: 20px 0px 20px 10px;
@@ -186,7 +180,7 @@ html, input, select{
 .field-wrap{
   display: flex;
   flex-direction: column;
-  width: 300px;
+  min-width: 300px;
 }
 
 .field-wrap:nth-child(2){
@@ -218,8 +212,6 @@ html, input, select{
   top: 40%;
   left: 41%;
   font-size: 30px;
-/*  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
 }
 
 .submit-btn{
@@ -253,4 +245,49 @@ html, input, select{
   padding: 10px 0px 0px 0px;
   color: #F5E43E;
   text-align: left;
+}
+
+/* Queries */
+
+@media (max-width: 1024px){
+  .navigation-menu li a{
+    font-size: 14px;
+  }
+
+  .flex-style-row{
+    flex-direction: column;
+  }
+
+  .main-heading{
+    font-size: 20px;
+  }
+
+  .field-wrap:nth-child(2){
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .submit-btn{
+    margin: 30px 0px 0px 0px;
+    padding: 20px 30px 20px 30px;
+  }
+}
+
+@media (max-width: 744px){
+  .coin-item{
+    flex-direction: column;
+  }
+
+  .coins-items-container{
+    text-align: left;
+  }
+
+  .name-coin{
+    font-size: 30px;
+  }
+
+  .price-coin{
+    font-size: 20px;
+  }
+
 }
