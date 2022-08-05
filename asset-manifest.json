@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/crypto-calculator/static/css/main.3962fb73.css",
-    "main.js": "/crypto-calculator/static/js/main.055aac73.js",
-    "index.html": "/crypto-calculator/index.html",
-    "main.3962fb73.css.map": "/crypto-calculator/static/css/main.3962fb73.css.map",
-    "main.055aac73.js.map": "/crypto-calculator/static/js/main.055aac73.js.map"
+    "main.css": "/crypto-api/static/css/main.91519510.css",
+    "main.js": "/crypto-api/static/js/main.0e3ad8ca.js",
+    "index.html": "/crypto-api/index.html",
+    "main.91519510.css.map": "/crypto-api/static/css/main.91519510.css.map",
+    "main.0e3ad8ca.js.map": "/crypto-api/static/js/main.0e3ad8ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.3962fb73.css",
-    "static/js/main.055aac73.js"
+    "static/css/main.91519510.css",
+    "static/js/main.0e3ad8ca.js"
   ]
 }
