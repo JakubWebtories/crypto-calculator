@@ -1,6 +1,6 @@
 {
   "homepage": "http://JakubWebtories.github.io/crypto-calculator/",
-  "name": "crypto-api",
+  "name": "crypto-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
