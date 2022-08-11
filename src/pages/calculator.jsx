@@ -15,7 +15,6 @@ const Calculator = () => {
     const [resultAmount, setResultAmount] = useState('');
     const [message, setMessage] = useState('')
     const [resultCurrency, setResultCurrency] = useState('')
-    const [fiatCurrensies, setFiatCurrensies] = useState('')
 
     /* Crypto currencies */
 
@@ -27,6 +26,10 @@ const Calculator = () => {
         .catch(error => console.log(error))
     }, []);
     
+    const submitSearchHandler = (e) => {
+        e.preventDefault()
+    }
+
     const handleChange = (e) => {
             setSearch(e.target.value)
         };
@@ -35,19 +38,6 @@ const Calculator = () => {
             coin.name.toLowerCase().includes(search.toLowerCase())
         );
 
-    
-    /* Fiat currencies */
-    
-    const currenciesData = [
-        {
-            value: 24,
-            name: "CZK",
-        },
-        {
-            value: 0.98,
-            name: "EUR",
-        }
-    ]
     
     /** Calculator **/
     
@@ -98,19 +88,12 @@ const Calculator = () => {
                     <div className="label-text">Result</div>
                     <div className="result-amount-style">$ {resultAmount}</div>
                     <span>{resultCurrency}</span>
-                    <select>
-                        {currenciesData.map(optionCurrency => (
-                            <option key={optionCurrency} value={optionCurrency.value}>
-                                {optionCurrency.name}
-                            </option>
-                        ))}
-                    </select>
                 </div>
 
             </section>
 
             <section className="coins-list-container">
-                <form className="search-form">
+                <form className="search-form" onSubmit={submitSearchHandler}>
                     <input className="search-input" type="text" placeholder="Search crypto . . ." onChange={handleChange} ></input>
                 </form>
 

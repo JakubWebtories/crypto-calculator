@@ -3,7 +3,7 @@ import '../styles.css';
 import Posts from '../pages/posts';
 import Calculator from "./calculator";
 import { useState } from 'react';
-import {  BrowserRouter as Router, Switch, Routes, Route, Link, NavLink } from 'react-router-dom';
+import {  BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 
 const Main = () => {
 
@@ -30,11 +30,14 @@ const Main = () => {
               <li>
                 <NavLink to='posts' style={navLinkStyles} >List of cryptocurrencies</NavLink>
               </li>
+              <li>
+                1
+              </li>
             </ul>
           </nav>
         </div>
           <Routes>
-            <Route index element={<Calculator post={post}  setPost={setPost} />} />
+            <Route path="" exact element={<Calculator post={post}  setPost={setPost} />} />
             <Route path='posts' element={<Posts post={post} setPost={setPost} />} />
           </Routes>
         </Router>
