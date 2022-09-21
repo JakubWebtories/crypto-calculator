@@ -40,7 +40,7 @@ const Calculator = ({ post }) => {
         const formatted = numberFormatter.format(resultAmount);
         setResultAmount(formatted);
         
-        /** Convert to another currency **/ 
+        /** Covert to another currency **/ 
         let resultCurrency = (resultAmount * 24.5);
 
         /** Handle decimal numbers **/
@@ -50,7 +50,7 @@ const Calculator = ({ post }) => {
       };
 
     return(
-        <section className="box-container">
+        <section>
             <div>
                 <h1 className="main-heading"><span className="style-color-heading">CALCULATE</span> Value</h1>
             </div>
@@ -66,8 +66,8 @@ const Calculator = ({ post }) => {
                     <div className="field-wrap">
                         <label className="label-text">Select Crypto</label>
                         <select className="field-calculator-input" value={selectedCoin} onChange={(e) => setSelectedCoin(e.target.value)}>
-                            <option key="select-coin">Select coin</option>
-                                {post.map(option => (
+                                    <option key="select-coin">Select coin</option>
+                            {post.map(option => (
                                 <>
                                     <option key={option.name}  value={option.current_price} > 
                                         {option.name} ${option.current_price}
@@ -94,33 +94,23 @@ const Calculator = ({ post }) => {
                 </form>
 
                 <div className="coins-items-container">
-                    {filteredCoins.map((coin) => {
-                            return(
-                                <article key={coin.id}>
-                                    <section className="coin-item" id="coin-item-container">
-                                        <div className="img-coin">
-                                            <img src={coin.image}></img>
-                                        </div>
-                                        <div className="short-name-coin">
-                                            <span>{coin.symbol}</span>
-                                        </div>
-                                        <div className="name-coin">
-                                            <span>{coin.name}</span>
-                                        </div>
-                                        <div className="price-coin">
-                                            <span><span className="currency-symbol">$ </span>{coin.current_price}</span>
-                                        </div>
-                                        <div className="percentage-change-coin">
-                                            <span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}} >{coin.market_cap_change_percentage_24h} %
-                                            </span>
-                                        </div>
-                                        <Link to={`/coin/${coin.id}`}>
-                                        <button className="coin-detail-btn">Explore</button>
-                                        </Link>
-                                    </section>
-                                </article>
+                    
+                    {filteredCoins.slice(0, 20).map(coin => {
+                                return(
+                                    <Item
+                                        key={coin.id}
+                                        image={coin.image}
+                                        symbol={coin.symbol}
+                                        name={coin.name}
+                                        price={coin.current_price}
+                                        market_cap_change_percentage_24h={coin.market_cap_change_percentage_24h}
+                                        
+                                    />
+                                    )
+                                }
                             )
-                        })}
+                        }
+
                 </div>
             </section>
         </section>

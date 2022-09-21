@@ -1,38 +1,24 @@
 import React from 'react';
-import axios from 'axios';
-import { useState, useEffect } from 'react'
-import Item from '../components/item'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Item from '../components/item';
 
-const baseURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-
-const Posts = () => {
+const Posts = ({ post }) => {
     
-    const [post, setPost] = useState([])
     const [search, setSearch] = useState('')
-
-    useEffect(() => {
-        axios.get(baseURL).then((response) => {
-            setPost(response.data)
-            console.log(response.data)
-        })
-        .catch(error => console.log(error))
-    }, []);
-    
+   
     const submitSearchHandler = (e) => {
         e.preventDefault()
     }
     
     const searchInput = (e) => {
-        setSearch()
         setSearch(e.target.value)
-        console.log(e.target.value)
     }
     
-    const filteredCoins = post.filter(coin => 
-            coin.name.toLowerCase().includes(search.toLowerCase())
-        )
+    const filteredCoins = post.filter(item => 
+            item.name.toLowerCase().includes(search.toLowerCase())
+    )
     
-
     return(
         <section>
             <div>
@@ -41,23 +27,36 @@ const Posts = () => {
 
             <section className="coins-list-container">
                 <form className="search-form" onSubmit={submitSearchHandler}>
-                    <input className="search-input" type="text" placeholder="Search crypto . . ." onChange={searchInput} ></input>
+                    <input className="search-input" type="text" placeholder="Search crypto . . . (e.g. Bitcoin)" onChange={searchInput} ></input>
                 </form>
                 <div className="coins-items-container">
-                {filteredCoins.map(coin => {
-                            return(
-                                <Item
-                                    key={coin.id}
-                                    image={coin.image}
-                                    symbol={coin.symbol}
-                                    name={coin.name}
-                                    price={coin.current_price}
-                                    market_cap_change_percentage_24h={coin.market_cap_change_percentage_24h}
-                                />
-                                )
-                            }
+                    {filteredCoins.map((coin) => {
+                        return(
+                            <article key={coin.id}>
+                                <section className="coin-item" id="coin-item-container">
+                                    <div className="img-coin">
+                                        <img src={coin.image}></img>
+                                    </div>
+                                    <div className="short-name-coin">
+                                        <span>{coin.symbol}</span>
+                                    </div>
+                                    <div className="name-coin">
+                                        <span>{coin.name}</span>
+                                    </div>
+                                    <div className="price-coin">
+                                        <span><span className="currency-symbol">$ </span>{coin.current_price}</span>
+                                    </div>
+                                    <div className="percentage-change-coin">
+                                        <span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}} >{coin.market_cap_change_percentage_24h} %
+                                        </span>
+                                    </div>
+                                    <Link to={`/coin/${coin.id}`}>
+                                    <button className="coin-detail-btn">Explore</button>
+                                    </Link>
+                                </section>
+                            </article>
                         )
-                    }
+                    })}
                 </div>
             </section>
         </section>
