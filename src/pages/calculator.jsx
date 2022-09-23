@@ -69,7 +69,7 @@ const Calculator = ({ post }) => {
                             <option key="select-coin">Select coin</option>
                                 {post.map(option => (
                                 <>
-                                    <option key={option.name}  value={option.current_price} > 
+                                    <option className="select-item" key={option.name}  value={option.current_price} > 
                                         {option.name} ${option.current_price}
                                     </option>
                                 </>

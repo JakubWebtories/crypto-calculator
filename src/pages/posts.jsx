@@ -20,7 +20,7 @@ const Posts = ({ post }) => {
     )
     
     return(
-        <section>
+        <section className="box-container">
             <div>
                 <h1 className="main-heading"><span className="style-color-heading">Crypto</span>currencies</h1>
             </div>

@@ -97,11 +97,11 @@ const Coin = () => {
                             </tr>
                             <tr>
                                 <td>Change (24h)</td>
-                                <td><span className="currency-symbol">$ </span>{reducePrice}</td>
+                                <td><span className="currency-symbol">$ </span><span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}}>{reducePrice}</span></td>
                             </tr>
                             <tr>
                                 <td>Change (24h)</td>
-                                <td><span className="currency-symbol">% </span>{reducePercentage}</td>
+                                <td><span className="currency-symbol">% </span><span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}}>{reducePercentage}</span></td>
                             </tr>
                         </table>
                     </div>
@@ -123,16 +123,19 @@ const Coin = () => {
 
             <section className="row-other">
                 <div>
-                    <h2 className="sub-heading">Other cryptocurrencies</h2>
+                    <h2 className="section-sub-heading">Other cryptocurrencies</h2>
                 </div>
                 <div>
                     
                   <section className="other-items-conatiner">
                       {removeCurrentQuery.slice(0,5).map(coin => (
                         <div className="other-item">
-                            <div>
-                                <span className="short-name-coin">{symbol}</span>
-                                <span className="rank-coin">Rank # {market_cap_rank}</span>
+                            <div className="">
+                                <img src={coin.image}></img>
+                            </div>
+                            <div className="other-items-sub-heading">
+                                <span className="short-name-coin">{coin.symbol}</span>
+                                <span className="rank-coin">Rank # {coin.market_cap_rank}</span>
                             </div>
                             <div className="other-name-coin">
                                 <span>{coin.name}</span>
