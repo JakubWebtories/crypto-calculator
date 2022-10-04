@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Item from '../components/item';
 
 const Posts = ({ post }) => {
     
@@ -50,7 +49,7 @@ const Posts = ({ post }) => {
                                         <span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}} >{coin.market_cap_change_percentage_24h} %
                                         </span>
                                     </div>
-                                    <Link to={`/coin/${coin.id}`}>
+                                    <Link to={`/${coin.id}`}>
                                     <button className="coin-detail-btn">Explore</button>
                                     </Link>
                                 </section>

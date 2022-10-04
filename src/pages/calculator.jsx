@@ -52,7 +52,7 @@ const Calculator = ({ post }) => {
     return(
         <section className="box-container">
             <div>
-                <h1 className="main-heading"><span className="style-color-heading">CALCULATE</span> Value</h1>
+                <h1 className="main-heading"><span className="style-color-heading">Calculate</span> Value</h1>
             </div>
 
             <section className="calculator-container">
@@ -114,7 +114,7 @@ const Calculator = ({ post }) => {
                                             <span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}} >{coin.market_cap_change_percentage_24h} %
                                             </span>
                                         </div>
-                                        <Link to={`/coin/${coin.id}`}>
+                                        <Link to={`/${coin.id}`}>
                                         <button className="coin-detail-btn">Explore</button>
                                         </Link>
                                     </section>

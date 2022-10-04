@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -13,7 +13,6 @@ const Coin = () => {
     useEffect(() => {
         axios.get(baseURL).then((response) => {
             setSingle(response.data)
-           // console.log(response.data)
         })
         .catch(error => console.log(error))
       }, []);
@@ -42,8 +41,6 @@ const Coin = () => {
     /* Remove current item */
 
     const removeCurrentQuery = single.filter((item) => item.id !== id)
-    console.log(removeCurrentQuery)
-
 
     return(    
         <section className="page-detail-coin-container">
@@ -51,7 +48,7 @@ const Coin = () => {
             <section className="first-row">
                 <section className="left-column">
                     <div className="">
-                        <Link to="/posts">
+                        <Link to="/coins">
                             <button className="sub-btn">Back to list</button>
                         </Link>
                     </div>
@@ -128,35 +125,26 @@ const Coin = () => {
                 <div>
                     
                   <section className="other-items-conatiner">
-                      {removeCurrentQuery.slice(0,5).map(coin => (
-                        <div className="other-item">
-                            <div className="">
-                                <img src={coin.image}></img>
-                            </div>
-                            <div className="other-items-sub-heading">
-                                <span className="short-name-coin">{coin.symbol}</span>
-                                <span className="rank-coin">Rank # {coin.market_cap_rank}</span>
-                            </div>
-                            <div className="other-name-coin">
-                                <span>{coin.name}</span>
-                            </div>
-                            <Link to={`/coin/${coin.id}`}>
-                                <button className="coin-detail-btn">Explore</button>
-                            </Link>
-                         </div> 
+                        {removeCurrentQuery.slice(0,5).map(coin => (
+
+                            <div className="other-item">
+                                <div className="">
+                                    <img src={coin.image}></img>
+                                </div>
+                                <div className="other-items-sub-heading">
+                                    <span className="short-name-coin">{coin.symbol}</span>
+                                    <span className="rank-coin">Rank # {coin.market_cap_rank}</span>
+                                </div>
+                                <div className="other-name-coin">
+                                    <span>{coin.name}</span>
+                                </div>
+                                <Link to={`/${coin.id}`}>
+                                    <button className="coin-detail-btn">Explore</button>
+                                </Link>
+                            </div> 
                         
-                       ))}
+                        ))}
                     </section>
-                    
-                    
-                    {/*
-                    {single.slice(0,5).map((coin) => {
-                            return(
-                                <article key={coin.id}>
-                                    {coin.name}
-                                </article>
-                    )})}
-                    */}
                     
                 </div>
             </section>

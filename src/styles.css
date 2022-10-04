@@ -52,6 +52,10 @@ body{
   letter-spacing: 1.5px;
 }
 
+.navbar-responsive{
+  display: none;
+}
+
 .active, .style-color-heading, .currency-symbol{
   color: #F5E43E;
 }
@@ -493,8 +497,44 @@ footer{
     padding: 20px 30px 20px 30px;
   }
 
-  /* Page detail icon */
+  .navbar-desktop{
+    display: none;
+  }
 
+  .navbar-responsive{
+    display: block;
+    min-height: 40px;
+  }
+
+  .navigation-menu ul li {
+    padding-right: 20px;
+}
+
+  .menu-icon, .menu-icon-close{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    right: 0;
+    top: 10px;
+    padding-right: 20px;
+    cursor: pointer;
+  }
+
+  .navigation-menu ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 100%;
+    min-height: 65px;
+    background-color: #112942;
+    margin: 0;
+    padding: 10px 0px 10px 0px;
+    border-top: 0.5px solid #fff;
+    justify-content: space-around;
+    transition: 1s;
+  }
 
 }
 
