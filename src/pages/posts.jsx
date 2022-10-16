@@ -15,7 +15,7 @@ const Posts = ({ post }) => {
     }
     
     const filteredCoins = post.filter(item => 
-            item.name.toLowerCase().includes(search.toLowerCase())
+        item.name.toLowerCase().includes(search.toLowerCase())
     )
     
     return(
@@ -32,30 +32,30 @@ const Posts = ({ post }) => {
                     {filteredCoins.map((coin) => {
                         return(
                             <article key={coin.id}>
-                                <section className="coin-item" id="coin-item-container">
-                                    <div className="img-coin">
-                                        <img src={coin.image}></img>
-                                    </div>
-                                    <div className="short-name-coin">
-                                        <span>{coin.symbol}</span>
-                                    </div>
-                                    <div className="name-coin">
-                                        <span>{coin.name}</span>
-                                    </div>
-                                    <div className="price-coin">
-                                        <span><span className="currency-symbol">$ </span>{coin.current_price}</span>
-                                    </div>
-                                    <div className="percentage-change-coin">
-                                        <span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}} >{coin.market_cap_change_percentage_24h} %
-                                        </span>
-                                    </div>
-                                    <Link to={`/${coin.id}`}>
-                                    <button className="coin-detail-btn">Explore</button>
-                                    </Link>
-                                </section>
-                            </article>
+                                    <section className="coin-item" id="coin-item-container">
+                                        <div className="img-coin">
+                                            <img src={coin.image}></img>
+                                        </div>
+                                        <div className="short-name-coin">
+                                            <span>{coin.symbol}</span>
+                                        </div>
+                                        <div className="name-coin">
+                                            <span>{coin.name}</span>
+                                        </div>
+                                        <div className="price-coin">
+                                            <span><span className="currency-symbol">$ </span>{coin.current_price}</span>
+                                        </div>
+                                        <div className="percentage-change-coin">
+                                            <span style={{color: coin.market_cap_change_percentage_24h < 0 ? "#ff3a3a" : "#60c460"}} >{coin.market_cap_change_percentage_24h} %
+                                            </span>
+                                        </div>
+                                        <Link to={`/${coin.id}`}>
+                                        <button className="coin-detail-btn">Explore</button>
+                                        </Link>
+                                    </section>
+                                </article>
                         )
-                    })}
+                    })}                    
                 </div>
             </section>
         </section>

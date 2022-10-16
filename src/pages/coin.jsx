@@ -5,12 +5,13 @@ import axios from "axios";
 
 const baseURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
 
-const Coin = () => {
+const Coin = ({ post }) => {
+
 
     const [single, setSingle] = useState();
     const { id } = useParams();
 
-    useEffect(() => {
+   useEffect(() => {
         axios.get(baseURL).then((response) => {
             setSingle(response.data)
         })
@@ -19,7 +20,7 @@ const Coin = () => {
 
     /** Loading condition **/
 
-    if (!single) return <div>Loading...</div>;
+    if (!single) return <div className="loading-window">Loading...</div>;
 
     const coin = single.find((coin) => coin.id === id);
     const { name, current_price, market_cap_rank, symbol, image, market_cap, high_24h, low_24h, price_change_24h, price_change_percentage_24h } = coin;
@@ -49,7 +50,7 @@ const Coin = () => {
                 <section className="left-column">
                     <div className="">
                         <Link to="/coins">
-                            <button className="sub-btn">Back to list</button>
+                            <button className="sub-btn">List of cryptocurrencies</button>
                         </Link>
                     </div>
 
@@ -118,6 +119,8 @@ const Coin = () => {
 
             </section>
 
+            {/* Other crypto items row */}
+
             <section className="row-other">
                 <div>
                     <h2 className="section-sub-heading">Other cryptocurrencies</h2>
@@ -137,6 +140,9 @@ const Coin = () => {
                                 </div>
                                 <div className="other-name-coin">
                                     <span>{coin.name}</span>
+                                </div>
+                                <div className="other-name-coin">
+                                    <span><span className="currency-symbol">$ </span>{coin.current_price}</span>
                                 </div>
                                 <Link to={`/${coin.id}`}>
                                     <button className="coin-detail-btn">Explore</button>

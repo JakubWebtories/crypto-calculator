@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Item from '../components/item';
 
 const Calculator = ({ post }) => {
 
@@ -41,7 +40,7 @@ const Calculator = ({ post }) => {
         setResultAmount(formatted);
         
         /** Convert to another currency **/ 
-        let resultCurrency = (resultAmount * 24.5);
+        let resultCurrency = (resultAmount * 25.3);
 
         /** Handle decimal numbers **/
         const numberFormatterCurrency = Intl.NumberFormat('en-US');
@@ -94,7 +93,7 @@ const Calculator = ({ post }) => {
                 </form>
 
                 <div className="coins-items-container">
-                    {filteredCoins.map((coin) => {
+                    {filteredCoins.slice(0,20).map((coin) => {
                             return(
                                 <article key={coin.id}>
                                     <section className="coin-item" id="coin-item-container">

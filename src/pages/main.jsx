@@ -31,7 +31,7 @@ const Main = () => {
 
             <Routes>              
               <Route exact={true} path="/" element={<Calculator post={post} setPost={setPost} />} />
-              <Route path='/posts' element={<Posts post={post} setPost={setPost} />} />
+              <Route path='/coins' element={<Posts post={post} setPost={setPost} />} />
               <Route path="/:id" element={<Coin post={post} setPost={setPost} />} /> 
             </Routes>
 

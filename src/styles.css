@@ -77,6 +77,14 @@ body{
   padding-bottom: 50px;
 }
 
+.coins-list-container{
+  min-height: 80vh;
+}
+
+.coins-items-container li{
+  list-style-type: none;
+}
+
 .btn-container{
   display: flex;
   align-items: center;
@@ -120,12 +128,12 @@ body{
 }
 
 .name-coin{
-  width: 40%;
+  min-width: 40%;
   text-align: left;
 }
 
 .price-coin{
-  width: 20%;
+  min-width: 20%;
   text-align: left;
 }
 
@@ -186,6 +194,11 @@ footer{
 }
 
 /* Page detail coin */
+
+.loading-window{
+ /* min-height: 80vh; */
+  font-size: 35px;
+}
 
 .page-detail-coin-container{
   width: 80%;
@@ -475,7 +488,11 @@ footer{
 }
 
 @media (max-width: 1024px){
-  .navigation-menu li a{
+.navigation-menu{
+  width: 100%;
+}
+
+  .navigation-menu li{
     font-size: 14px;
   }
 
@@ -499,6 +516,8 @@ footer{
 
   .navbar-desktop{
     display: none;
+  /*  position: absolute;
+    top: 90px; */
   }
 
   .navbar-responsive{
